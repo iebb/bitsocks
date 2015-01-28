@@ -1,6 +1,7 @@
 <?php
 	include '../config.php';
 	if ($_GET['confirmations'] < MIN_CONF) die();
+	if ($_GET['secret'] < md5(SECRET_KEY)) die();
 	$EMail = mysql_escape_string($_GET['email']);
 	$Pass = mysql_escape_string($_GET['pass']);
 	$Amount = $_GET['value'] / 100000000.0;
@@ -54,5 +55,4 @@ You can always reuse your deposit address.
 EOT;
 	Send_Mail($EMail,$title,$content);
 	echo "*ok*";
-	error_log(json_encode(array($_POST,$_GET),3,'log.txt'));
 ?>

@@ -3,7 +3,7 @@
 	mysql_select_db(MYSQL_DATABASE);
 	date_default_timezone_set('Asia/Shanghai');
 	function BlockchainInfo_GetAddress($email="",$pass=""){
-		$request_uri = "https://blockchain.info/api/receive?method=create&cors=true&format=plain&address=".BITCOIN_ADDRESS."&shared=false&callback=".urlencode(SITE_URI."handles/blockchain.php?email=$email&pass=".md5($pass));
+		$request_uri = "https://blockchain.info/api/receive?method=create&cors=true&format=plain&address=".BITCOIN_ADDRESS."&shared=false&callback=".urlencode(SITE_URI."handles/blockchain.php?secret=".md5(SECRET_KEY)."email=$email&pass=".md5($pass));
 		$response = json_decode(file_get_contents($request_uri));
 		return $response->input_address;
 	}
