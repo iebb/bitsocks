@@ -1,7 +1,7 @@
 <?php
 	include '../config.php';
 	if ($_GET['confirmations'] < MIN_CONF) die();
-	if ($_GET['secret'] < md5(SECRET_KEY)) die();
+	if ($_GET['secret'] != md5(SECRET_KEY)) die();
 	$EMail = mysql_escape_string($_GET['email']);
 	$Pass = mysql_escape_string($_GET['pass']);
 	$Amount = $_GET['value'] / 100000000.0;
