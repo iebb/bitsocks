@@ -1,4 +1,4 @@
-# shadowsocks-manyuser-bitcoin
+# bitsocks
 A Bitcoin-accepting Front-End for mengskysama/shadowsocks
 
 Make sure to change config.php and import import.sql

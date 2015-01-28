@@ -98,7 +98,7 @@ Account Details will be sent via E-Mail when a deposit is done.
 		}
 	</script>
 <div>
-    <p>&copy; <?php echo "2014-".date('Y'); ?>&nbsp;<?php echo SITE_NAME; ?><br>Powered by <a href="https://github.com/jebwizoscar/shadowsocks-manyuser-bitcoin">shadowsocks-manyuser-bitcoin</a> by Jebwiz Oscar, based on <a href="https://github.com/mengskysama/shadowsocks">mengskysama/shadowsocks</a></p>
+    <p>&copy; <?php echo "2014-".date('Y'); ?>&nbsp;<?php echo SITE_NAME; ?><br>Powered by <a href="https://github.com/jebwizoscar/bitsocks">bitsocks</a> by Jebwiz Oscar, based on <a href="https://github.com/mengskysama/shadowsocks">mengskysama/shadowsocks</a></p>
 </div>
 </div> <!-- /container -->
 
