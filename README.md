@@ -1,12 +1,19 @@
 # bitsocks
-A lightweight Bitcoin-accepting Front-End for mengskysama/shadowsocks
+#### A lightweight Bitcoin-accepting Front-End for mengskysama/shadowsocks
+Demo: http://h.og.gs/
 
 Make sure to change config.php and import import.sql
 
 Donations Welcomed: 18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8
 
 Using Blockchain.info API, so we don't need to run bitcoind on server.
+
 Account Details will be sent via E-Mail when a deposit is done.
+
+### Install:
+	Run shadowsocks-manyuser, then just upload the script to your web server, and import the database :)
+	
+### Sample Outgoing Mail:
 ```
 	Hi [e-mail address],
 	You deposited 0.008 for (1,038.254 MiB @ 0.00789017/GiB)
@@ -26,5 +33,3 @@ Account Details will be sent via E-Mail when a deposit is done.
 	You can always reuse your deposit address.
 ```
 
-Install:
-	Run shadowsocks-manyuser, then just upload the script to your web server, and import the database :)
