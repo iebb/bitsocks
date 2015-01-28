@@ -1,5 +1,5 @@
 # bitsocks
-A Bitcoin-accepting Front-End for mengskysama/shadowsocks
+A lightweight Bitcoin-accepting Front-End for mengskysama/shadowsocks
 
 Make sure to change config.php and import import.sql
 
