@@ -9,9 +9,9 @@
 	/* Config Begin */
 	
 		// Your receive address
-		define('BITCOIN_ADDRESS', '17AKDJCyzrRMERYxpgsfCcALrvKh4XmSoT');
+		define('BITCOIN_ADDRESS', '18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8');
 		// Better change it to a more random string 
-		define('SECRET_KEY', 'muchrandommanywow');
+		define('SECRET_KEY', 'itisarandomstring');
 
 		define('FIAT', 'USD');
 		define('CRYPTO', 'BTC');
