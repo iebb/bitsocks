@@ -18,19 +18,6 @@
 	
 	
 	
-	
-	/*
-		Price per GigaBytes.
-	*/
-	define('IN_FIAT', true);
-	define('FIAT', 'USD');
-	define('FIAT_PER_GB', 2);
-	
-	define('IN_CRYPTO', !IN_FIAT);
-	define('CRYPTO', 'BTC');
-	define('CRYPTO_PER_GB', 0.01);
-	
-	
 	/*
 		SendGrid Config
 	*/
@@ -43,16 +30,8 @@
 	
 	define('MIN_CONF', 1);
 	
-	define('PAYMENT_PROCESSOR', 'Blockchain');
-	// Now 'Blockchain' is the only valid option
-	/*
-		You can use Blockchain API so there's no need for a wallet client in your server
-		These settings are only for Blockchain.info API.
-	*/
-	// Your receive address
-	define('BITCOIN_ADDRESS', '18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8');
-	// Better change it to a more random string 
-	define('SECRET_KEY', 'itisarandomstring');
+	define('GATEWAY', 'blockchain');
+	// Now 'blockchain' is the only valid option
 
 
 	include 'functions.php';

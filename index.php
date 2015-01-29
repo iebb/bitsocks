@@ -32,14 +32,14 @@
     
 	<div class="header">
     <ul class="nav nav-pills pull-right" role="tablist">
-        <li role="presentation">1 BTC = $<?=number_format(1.0/Get_Fiat_Equalvent(),3)?></li>
+        <li role="presentation">1 BTC = <?php echo number_format(FIAT_PER_CRYPTO,3);?> <?php echo FIAT?></li>
     </ul>
     <h3 class="text-muted"><?php echo SITE_NAME; ?></h3>
 </div>
 	<center>
         <h1><?php echo SITE_NAME; ?></h1>
         <p class="lead">A bitcoin-based Shadowsocks server</p>
-        <p class="lead">Current Price: <?php echo $PER_GB ?> <?php echo CRYPTO?> / GiB</p>
+        <p class="lead">Current Price: <?php echo CRYPTO_PER_GB ?> <?php echo CRYPTO?> / GiB</p>
 
 		<table style="font-size:150%; width:100%" >
 			<tr>
@@ -64,14 +64,14 @@
 		<p>
 			<button class="btn btn-lg btn-success" onclick="submit()">Get Deposit Address</button>
 			<button class="btn btn-lg btn-warning" onclick="usage()">Show Account Status</button>
-			<h3><b id="deposit"></b></h3>
-			<pre id="note">Note:
-Manage Key isn't Shadowsocks Password.
-Also it's possible to have different Manage Keys under a same E-mail.
-Account Details will be sent via E-Mail when a deposit is done.
-			</pre>
+			<div id="note" class="well"></div>
 		</p>
 	</center>
+	<p><b>Note:</b><br/>
+		Manage Key isn't Shadowsocks Password.<br/>
+		It's possible to have different Manage Keys under a same E-mail.<br/>
+		Account Details will be sent via E-Mail when a deposit is done (have at least <?=MIN_CONF?> confirmations).
+	</p>
 	<br/>
 	<script>
 		function submit(){
@@ -81,7 +81,7 @@ Account Details will be sent via E-Mail when a deposit is done.
 					pass: $('#pass').val()
 				},
 				function( data ) {
-					$( "#deposit" ).html( 'Deposit here: '+data );
+					$( "#note" ).html( data );
 				}
 			);
 		}
@@ -99,6 +99,7 @@ Account Details will be sent via E-Mail when a deposit is done.
 	</script>
 <div>
     <p>&copy; <?php echo "2014-".date('Y'); ?>&nbsp;<?php echo SITE_NAME; ?><br>Powered by <a href="https://github.com/jebwizoscar/bitsocks">bitsocks</a> by Jebwiz Oscar, based on <a href="https://github.com/mengskysama/shadowsocks">mengskysama/shadowsocks</a></p>
+    <p>Donation: <a href="https://blockchain.info/address/18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8">18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8</a></p>
 </div>
 </div> <!-- /container -->
 

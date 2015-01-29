@@ -6,7 +6,7 @@
 	$EMail = mysql_escape_string($_GET['email']);
 	$Pass = mysql_escape_string($_GET['pass']);
 	$Amount = $_GET['value'] / 100000000.0;
-	$BW = (int)(($_GET['value'] / 100000000.0)/ $PER_GB * 1024.0* 1024.0* 1024.0);
+	$BW = (int)(($_GET['value'] / 100000000.0)/ CRYPTO_PER_GB * 1024.0* 1024.0* 1024.0);
 	
 	$TX_Hash = $_GET['input_transaction_hash'];
 	$sql = "SELECT * FROM user WHERE `email`='$EMail' AND `pass`='$Pass'";
@@ -29,16 +29,17 @@
 	$sql = "SELECT * FROM user WHERE `email`='$EMail' AND `pass`='$Pass'";
 	$result = mysql_query($sql);
 	$row = mysql_fetch_object($result);
-	$BW_MiB = number_format(($_GET['value'] / 100000000.0)/ $PER_GB * 1024.0,3);
+	$BW_MiB = number_format(($_GET['value'] / 100000000.0)/ CRYPTO_PER_GB * 1024.0,3);
 	$u=number_format($row->u/ 1048576.0,3);
 	$d=number_format($row->d/ 1048576.0,3);
 	$t=number_format($row->transfer_enable/ 1048576.0,3);
 	$r=number_format(($row->transfer_enable-$row->u-$row->d)/ 1048576.0,3);
 	$sd=SHADOWSOCKS_DOMAIN;
 	$ec=SHADOWSOCKS_ENCRYPTION;
+	$cpg=CRYPTO_PER_GB;
 	$content=<<<EOT
 Hi $EMail,
-You deposited $Amount for ($BW_MiB MiB @ $PER_GB/GiB)
+You deposited $Amount for ($BW_MiB MiB @ $cpg/GiB)
 Transaction ID: $TX_Hash
 Blockchain: https://blockchain.info/tx/$TX_Hash
 ===============

@@ -2,16 +2,15 @@
 	mysql_pconnect(MYSQL_SERVER,MYSQL_USER,MYSQL_PASSWORD);
 	mysql_select_db(MYSQL_DATABASE);
 	date_default_timezone_set('Asia/Shanghai');
-	function BlockchainInfo_GetAddress($email="",$pass=""){
-		$request_uri = "https://blockchain.info/api/receive?method=create&cors=true&format=plain&address=".BITCOIN_ADDRESS."&shared=false&callback=".urlencode(SITE_URI."handles/blockchain.php?secret=".md5(SECRET_KEY)."&email=$email&pass=".md5($pass));
-		$response = json_decode(file_get_contents($request_uri));
-		return $response->input_address;
+	
+	if (is_file('gateways/'.GATEWAY.'.functions.php')){
+		$GATEWAY=GATEWAY;
+	}else{
+		$GATEWAY='blockchain';
 	}
-	function Get_Fiat_Equalvent($value=1,$currency="USD"){
-		$request_uri = "https://blockchain.info/tobtc?currency=$currency&value=$value";
-		$response = file_get_contents($request_uri);
-		return $response;
-	}
+	include 'gateways/'.$GATEWAY.'.functions.php';
+	
+	
 	function Send_Mail($email,$subject,$text){
 		$request_uri = "https://api.sendgrid.com/api/mail.send.json";
 		$data = array(
@@ -35,6 +34,4 @@
 		$context  = stream_context_create($options);
 		$result = file_get_contents($request_uri, false, $context);
 	}
-	
-	$PER_GB=IN_FIAT?Get_Fiat_Equalvent(FIAT_PER_GB,FIAT):CRYPTO_PER_GB;
 ?>

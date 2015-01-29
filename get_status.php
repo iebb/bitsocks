@@ -12,6 +12,7 @@
 		$sd=SHADOWSOCKS_DOMAIN;
 		$ec=SHADOWSOCKS_ENCRYPTION;
 		echo <<<EOT
+<pre>
 Shadowsocks Server: $sd
 Encryption: $ec
 Port: {$row->port}
@@ -21,6 +22,7 @@ Total: $t MiB
 Uploaded: $u MiB
 Downloaded: $d MiB
 Remaining: $r MiB
+</pre>
 EOT;
 	}else{
 		echo 'E-mail / Key Pair Not Found!';
