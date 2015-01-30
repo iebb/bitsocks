@@ -98,7 +98,7 @@
 		}
 	</script>
 <div>
-    <p>&copy; <?php echo "2014-".date('Y'); ?>&nbsp;<?php echo SITE_NAME; ?><br>Powered by <a href="https://github.com/jebwizoscar/bitsocks">bitsocks</a> by Jebwiz Oscar, based on <a href="https://github.com/mengskysama/shadowsocks">mengskysama/shadowsocks</a></p>
+    <p>&copy; <?php echo "2014-".date('Y'); ?>&nbsp;<?php echo SITE_NAME; ?><br>Powered by <a href="https://github.com/jebwizoscar/bitsocks">bitsocks</a> <?php echo SITE_VER;?> by Jebwiz Oscar, based on <a href="https://github.com/mengskysama/shadowsocks">mengskysama/shadowsocks</a></p>
     <p>Donation: <a href="https://blockchain.info/address/18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8">18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8</a></p>
 </div>
 </div> <!-- /container -->

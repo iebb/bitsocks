@@ -2,6 +2,7 @@
 	date_default_timezone_set('UTC');
 	
 	define('SITE_NAME', 'BitSocks');
+	define('SITE_VER', '1.0.8');
 	define('SITE_DESCRIPTION', 'A bitcoin-based Shadowsocks server');
 	define('SITE_URI', 'http://s01.og.gs/');
 	define('DOMAIN', 'og.gs');
