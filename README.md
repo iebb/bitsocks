@@ -1,6 +1,5 @@
 # bitsocks
 #### A lightweight Bitcoin-accepting Front-End for mengskysama/shadowsocks
-Demo: http://h.og.gs/
 
 Donations Welcomed: 18dgui9RA4964MGQuGgm4BqPdrxRXJAUc8
 
